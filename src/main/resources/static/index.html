@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Deep-SpringBoot</title>
+</head>
+<script>
+var oReq = new XMLHttpRequest();
+function reqListener() {
+  var data = JSON.parse(this.responseText);
+  console.log(data);
+  var element=document.getElementById("data");
+  data.forEach((item)=>{
+        element.innerHTML+="<h2>"+item+"</h2><br/>";
+  });
+}
+oReq.onload=reqListener;
+oReq.open('get', './getallgreetings', true);
+oReq.send();
+
+</script>
+<body>
+<h1>Hi deep is showing HTML FILE through java spring boot</h1>
+<div id="data">
+
+</div>
+</body>
+
+</html>
